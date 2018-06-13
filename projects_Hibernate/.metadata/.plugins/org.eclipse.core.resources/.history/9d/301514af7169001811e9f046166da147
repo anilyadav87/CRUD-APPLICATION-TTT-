@@ -1,0 +1,5 @@
+package com.niit.crudhibernate.daoimpl;
+
+public class UserDAOImpl {
+
+}

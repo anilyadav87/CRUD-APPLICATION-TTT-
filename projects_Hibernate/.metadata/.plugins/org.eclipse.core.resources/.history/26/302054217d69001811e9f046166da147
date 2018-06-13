@@ -1,0 +1,17 @@
+package com.niit.crudhibernate;
+
+
+import junit.framework.TestCase;
+//import java.util.List;
+
+import org.junit.*;
+//import org.junit.Test;
+//import org.junit.After;
+
+import com.niit.crudhibernate.dao.*;
+import com.niit.crudhibernate.daoimpl.*;
+import com.niit.crudhibernate.model.User;
+
+public class UserTest extends TestCase {
+
+}

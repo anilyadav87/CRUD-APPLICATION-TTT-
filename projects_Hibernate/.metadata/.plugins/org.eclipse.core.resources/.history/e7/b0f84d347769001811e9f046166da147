@@ -1,0 +1,40 @@
+package com.anil.crudhibernate;
+
+
+import junit.framework.TestCase;
+import java.util.List;
+
+import org.junit.*;
+//import org.junit.Test;
+//import org.junit.After;
+
+import com.niit.crudhibernate.dao.*;
+import com.niit.crudhibernate.daoimpl.*;
+import com.niit.crudhibernate.model.User;
+public class UserTest extends TestCase {
+
+		UserDAO userDAO;
+		
+		
+		@Before
+		public void setUp()
+		{
+			userDAO = new UserDAOImpl();
+		}
+		@After
+		public void tearDown()
+		{
+			userDAO = null;
+		}
+		
+		@Test
+		public void addUser() {
+			User user = new User();
+			user.setFirstName("anil");
+			user.setLastName("yadav");
+			user.setAddress("andheri");
+			user.seteMail("anil.y@gmail.com");
+			user.setPassword("1233");
+			assertEquals(true, userDAO.addUser(user));
+		}
+}

@@ -1,0 +1,38 @@
+package com.anil.hibernatecruddemo.config;
+
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.SessionFactory;
+import org.hibernate.Session;
+import com.anil.crudhibernatedemo.model.*;
+public class DBConfig {
+
+	private static SessionFactory sessionFactory = null;
+	 
+    public static SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+	public static void setSessionFactory(SessionFactory sessionFactory) {
+		DBConfig.sessionFactory = sessionFactory;
+	}
+	static {
+        try{
+        	System.out.println("Not Successful");
+            load();
+            System.out.println("Successful");
+        }catch(Exception e){
+            System.err.println("Exception while initializing hibernate util.. ");
+            e.printStackTrace();
+        }
+    }
+	public static void load()
+	{
+		Configuration configuration = new Configuration();
+    configuration.configure("hibernate.cfg.xml");
+    configuration.addAnnotatedClass(User.class);
+    ServiceRegistry srvcReg = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+    setSessionFactory(configuration.buildSessionFactory(srvcReg));
+		
+	}
+}

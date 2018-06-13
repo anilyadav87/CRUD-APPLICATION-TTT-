@@ -1,0 +1,7 @@
+package com.anil.crudhibernate;
+
+import junit.framework.TestCase;
+
+public class UserTest extends TestCase {
+
+}

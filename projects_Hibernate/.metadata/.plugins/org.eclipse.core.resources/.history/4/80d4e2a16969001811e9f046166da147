@@ -1,0 +1,5 @@
+package com.niit.hibernatecruddemo.model;
+
+public class User {
+
+}
